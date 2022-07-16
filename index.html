@@ -1,0 +1,227 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Review Dannie Codes</title>
+<script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
+<link rel="stylesheet" href="https://use.typekit.net/scc5wds.css">
+<link href="https://kit-pro.fontawesome.com/releases/v5.13.0/css/pro.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.3.6/fitty.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/b5f71ff18c.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&family=Inconsolata:wght@300;400;800&family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,500;0,700;0,900;1,300;1,500;1,700;1,900&family=Raleway:ital,wght@0,300;0,500;0,800;1,500;1,700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,700&family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,900&display=swap');
+
+body { background: hsl(328deg 58% 94%); display: flex; min-height: 100vh; flex-direction: column; align-items: center;margin:0px;gap:20px; }
+* {padding:0px;margin:0px;color:#888;}
+
+section#review-job-dannie { background: #efefef; padding: 20px; display: flex; flex-direction: column; gap: 15px; align-items: center; justify-content: center; border: 1px solid #ddd; }
+section#review-job-dannie h1 { font: 700 1.4rem Poppins; color: hotpink; text-transform: uppercase; display: flex; text-shadow: 6px 5px 8px #cdcdcd; flex-direction: column; align-items: center; gap: 10px; }
+section#review-job-dannie h1 i { display: flex; align-items: center; justify-content: center; background: hotpink; color: #f5f5f5; padding: 13px; border-radius: 100%; font-size: 35px; box-shadow: 1px 5px 8px #cdcdcd; }
+section#review-job-dannie .rating {display:none;gap:10px;}
+section#review-job-dannie .rating.active {display:flex;}
+section#review-job-dannie .rating i { font-size: 30px; cursor: pointer;transition:0.5s all; }
+section#review-job-dannie .rating i.active {color: hotpink; font-weight: 900; }
+section#review-job-dannie .rating i.size{font-size:40px;}
+section#review-job-dannie .message-client {display:flex;flex-direction:column;gap:5px;display:none}
+section#review-job-dannie .message-client label {font: 600 11px aglet-mono, mono; text-transform: uppercase;}
+section#review-job-dannie .message-client textarea#message-c { border: 1px solid #ccc; background: #eee; padding: 10px; border-radius: 5px; resize: none; max-height: 200px; min-height: 75px; font: 500 13px Open Sans; text-align: justify; color: #333; display: block; width: 100%; box-sizing: border-box; margin: 5px 0px; }
+section#review-job-dannie .message-client textarea#message-c:focus-visible, section#review-job-dannie .message-client input[type="text"]:focus-visible { outline: 0px solid #ccc!important; }
+section#review-job-dannie .message-client.active {display:block;}
+section#review-job-dannie .message-client input[type="text"] { border: 1px solid #ccc; background: #eee; padding: 2px 5px; border-radius: 2px; margin-left: 5px; width: 75.5%; font: 500 13px Open Sans; text-align: justify; color: #333; }
+section#review-job-dannie .message-client button {background: #ff69b485; border: 1px solid #ddd; text-transform: uppercase; font: 600 15px aglet-mono, mono; padding: 8px; color: #fff; margin: 10px auto; border-radius: 20px; display: block; cursor: pointer; width: -webkit-fill-available;}
+
+section.list-reviews{ display: flex;margin-bottom:20px;flex-direction:column; }
+#page-review-dannie a {display:none;}
+section.list-reviews .teste{ display: none;}
+section.list-reviews .comentarios { display: flex; gap: 10px; height: auto!important;flex-wrap:wrap; }
+section.list-reviews .comentarios .item { position: relative; transform: none!important; width: 300px!important; border: 1px solid #ccc; background: #eee; padding: 20px; text-align: justify; font: 600 12px aglet-mono, mono; text-transform: uppercase; }
+section.list-reviews .comentarios .item .comment-2 { text-transform: none; font: 600 12px Open Sans; height: 100px; overflow: auto; padding-right: 10px; color: #1c1c1c;margin:5px 0px; }
+section.list-reviews .comentarios .item .nickname-2 { color: hotpink;margin-top:10px; }
+section.list-reviews .comentarios .item .rating-2 { display: flex; gap: 5px; align-items: center; justify-content: center; font-size: 24px; }
+section.list-reviews .comentarios .item .rating-2 i {color: hotpink; font-weight: 900; }
+wrap { display: flex; flex-direction: column; gap: 30px; width: calc(100vw - 30%); background: #f5f5f5; padding: 50px; margin: 50px; box-shadow: 20px 20px 60px #d3c4cd, -20px -20px 60px #ffffff, 0 0 2vh 2vh #f9e7f0; border: 10px solid #eee; }
+
+p { text-transform: none; font: 500 15px Open Sans; overflow: auto; padding-right: 10px; color: #1c1c1c;text-align:justify;line-height:25px; }
+</style>
+
+</head>
+
+<body>
+<wrap>
+<div id="page-review-dannie">
+<a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vR5kHn8Bg5zpQmPBO_LhrCYlwO0hrQ_L7ATdFkMqfy5mTwSH5PsT5cRnbObjIQt0oWbyGUMd_A5vb0x/pubhtml" class="umteste">Link da tabela</a>
+<section class="list-reviews">
+<div class="teste"></div>
+<div class="comentarios"></div>
+</section>
+</div>
+
+<form name="rating-dannie" action="https://api.sheetmonkey.io/form/5a9Y5YXRh9f9GsrDC7Dgcv" method="post">
+<section id="review-job-dannie">
+<h1 id="sub">How was your experience?</h1>
+<p>You mean you have contracted one of Dannie's services? Then how about leaving your evaluation?! By doing this you will be collaborating so that future interested parties/clients will have an extra point to consider before hiring her!<br> Select below the level of satisfaction in the hearts being: 1 heart disappointed and 5 very satisfied </p>
+<div class="rating active">
+<i class="far fa-heart" id="h1"></i>
+<i class="far fa-heart" id="h2"></i>
+<i class="far fa-heart" id="h3"></i>
+<i class="far fa-heart" id="h4"></i>
+<i class="far fa-heart" id="h5"></i>
+</div>
+<div class="message-client">
+<label>Leave a message telling us about your experience working with Dannie!</label>
+<textarea id="message-c" name="message"></textarea>
+<label>Your name/nick</label><input type="text" name="nickname" required="required" />
+<input type="hidden" name="rating" value="" />
+<input type="hidden" name="Created" value="x-sheetmonkey-current-date-time" />
+<button type="submit">Send!</button>
+</div>
+</section>
+</form>
+</wrap>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+$('#review-job-dannie .rating i').click(function(){
+  $('#review-job-dannie .message-client').addClass('active');});
+$('#review-job-dannie .rating i#h1').click(function(){
+  $('i#h1').addClass('active size');
+  $('i#h2, i#h3, i#h4, i#h5').removeClass('active size');
+  $('#review-job-dannie input[name="rating"]').val('1 estrela');
+});
+$('#review-job-dannie .rating i#h2').click(function(){
+  $('i#h1, i#h2').addClass('active');
+  $('i#h2').addClass('size');
+  $('i#h1').removeClass('size');
+ $('i#h3, i#h4, i#h5').removeClass('active size');
+$('#review-job-dannie input[name="rating"]').val('2 estrela');});
+$('#review-job-dannie .rating i#h3').click(function(){
+  $('i#h1, i#h2, i#h3').addClass('active');
+  $('i#h3').addClass('size');
+  $('i#h1, i#h2').removeClass('size');
+$('i#h4, i#h5').removeClass('active size');
+$('#review-job-dannie input[name="rating"]').val('3 estrela');});
+$('#review-job-dannie .rating i#h4').click(function(){
+  $('i#h1, i#h2, i#h3, i#h4').addClass('active');
+  $('i#h4').addClass('size');
+  $('i#h1, i#h2, i#h3').removeClass('size');
+$('i#h5').removeClass('active size');
+$('#review-job-dannie input[name="rating"]').val('4 estrela');});
+$('#review-job-dannie .rating i#h5').click(function(){
+  $('i#h1, i#h2, i#h3, i#h4, i#h5').addClass('active');
+  $('i#h5').addClass('size');
+  $('i#h1, i#h2, i#h3, i#h4').removeClass('size');
+  $('#review-job-dannie input[name="rating"]').val('5 estrela');
+});
+
+$('a.umteste').each(function(){
+    var headeruser=$(this).attr('href');
+    var self=$(this);
+    var parent=$(this).parents('#page-review-dannie');
+    $.get(headeruser,function(data){
+    var rpgtable= $(data).find('table tr td');
+    $(rpgtable).addClass('tabela');
+    $(rpgtable).removeClass('s0');
+    $(rpgtable).removeAttr('dir');
+    $(parent).find('.list-reviews .teste').prepend(rpgtable);
+    $('td.tabela:nth-child(4n+1)').addClass('message');
+    $('td.tabela:nth-child(4n+2)').addClass('nickname');
+    $('td.tabela:nth-child(4n+3)').addClass('rating');
+    $('td.tabela:nth-child(4n+4)').addClass('date');
+  
+      const testeAray = [];
+      let teste1 = document.querySelectorAll(".message");
+      document.querySelectorAll(".message").forEach(e =>{   
+            testeAray.push(e.textContent); 
+        });
+      
+      const testeAray2 = [];
+      let teste2 = document.querySelectorAll(".nickname");
+      document.querySelectorAll(".nickname").forEach(e =>{   
+            testeAray2.push(e.textContent); 
+        });
+      
+      const testeAray3 = [];
+      let teste3 = document.querySelectorAll(".rating");
+      document.querySelectorAll(".rating").forEach(e =>{   
+            testeAray3.push(e.textContent); 
+        });
+      
+      const testeAray4 = [];
+      let teste4 = document.querySelectorAll(".date");
+      document.querySelectorAll(".date").forEach(e =>{   
+            testeAray4.push(e.textContent); 
+        });
+
+       var grid = null;
+  var docElem = document.documentElement;
+  var demo = document.querySelector('#page-review-dannie');
+  var gridElement = demo.querySelector('.comentarios');
+  var dragOrder = [];
+  var uuid = 0;
+
+  //
+  // Grid helper functions
+  //
+
+  function initDemo() { initGrid();}
+
+  
+
+  //
+  // Generic helper functions
+  //
+
+  function generateElements(amount) {
+
+    var ret = [];
+
+    for (var i = 0, len = amount || 1; i < amount; i++) {
+
+      var id = ++uuid;
+      var message = testeAray[id];
+      var title = testeAray2[id];
+      var rating = testeAray3[id];
+      var date = testeAray4[id];
+      var itemElem = document.createElement('div');
+      var itemTemplate = '<div class="item div'+id+'"><div class="rating-2">'+rating+'</div><div class="comment-2">'+message+'</div><div class="nickname-2">'+title+'</div><div class="date-2">'+date+'</div></div>';
+
+      itemElem.innerHTML = itemTemplate;
+      ret.push(itemElem.firstChild);
+
+    }
+
+    return ret;
+
+  }
+
+   
+  function initGrid() {
+
+    var dragCounter = 0;
+
+    grid = new Muuri(gridElement, {
+      items: generateElements(testeAray.length - 1),
+      layoutDuration: 400,
+      layoutEasing: 'ease',
+      dragEnabled: true    
+    })
+  }
+
+  //
+  // Fire it up!
+  //
+
+  initDemo();
+$('.rating-2').html(function () { return $(this).html().replace('5 estrela', '<i class="far fa-heart active" ></i><i class="far fa-heart active" ></i><i class="far fa-heart active" ></i><i class="far fa-heart active" ></i><i class="far fa-heart active" ></i>') }); 
+$('.rating-2').html(function () { return $(this).html().replace('4 estrela', '<i class="far fa-heart active" ></i><i class="far fa-heart active" ></i><i class="far fa-heart active" ></i><i class="far fa-heart active" ></i>') });
+$('.rating-2').html(function () { return $(this).html().replace('3 estrela', '<i class="far fa-heart active" ></i><i class="far fa-heart active" ></i><i class="far fa-heart active" ></i>') });
+$('.rating-2').html(function () { return $(this).html().replace('2 estrela', '<i class="far fa-heart active" ></i><i class="far fa-heart active" ></i>') });
+$('.rating-2').html(function () { return $(this).html().replace('1 estrela', '<i class="far fa-heart active" ></i>') });
+    });
+  });
+});
+    </script>
+
+
+</body></html>
